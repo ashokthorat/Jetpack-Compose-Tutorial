@@ -100,6 +100,10 @@ fun redirectToNextPage(context: Context, index: Int) {
             val intent = Intent(context, Tutorial4::class.java)
             context.startActivity(intent)
         }
+        RedirectEnum.tutorial5.index -> {
+        val intent = Intent(context, Tutorial5::class.java)
+        context.startActivity(intent)
+    }
     }
 }
 

@@ -41,6 +41,13 @@
             android:theme="@style/Theme.JetpackComposeTutorial"
             />
         <activity
+            android:name=".Tutorial5"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial1"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.JetpackComposeTutorial"
+            />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
