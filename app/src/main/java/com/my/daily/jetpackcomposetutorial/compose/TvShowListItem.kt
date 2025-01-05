@@ -56,8 +56,6 @@ public fun TvListItems(tvShow: TvShow, selectedItem: (TvShow) -> Unit) {
                     Text(text = tvShow.year.toString(), style = MaterialTheme.typography.headlineSmall)
                     Text(text = tvShow.rating.toString(), style = MaterialTheme.typography.headlineSmall)
                 }
-
-
             }
 
         }
