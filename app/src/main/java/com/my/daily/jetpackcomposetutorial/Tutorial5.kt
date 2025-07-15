@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.anushka.composerecyclerview.model.TvShow
 import com.my.daily.jetpackcomposetutorial.compose.TvListItems
 import com.my.daily.jetpackcomposetutorial.data.TvShowList
+import com.my.daily.jetpackcomposetutorial.details.ListDetailsPage
 
 class Tutorial5 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,8 @@ class Tutorial5 : ComponentActivity() {
                  Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
              }*/
             DisplayTvShows {
-                Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
+                startActivity(ListDetailsPage.intent(this, it))
 
             }
         }

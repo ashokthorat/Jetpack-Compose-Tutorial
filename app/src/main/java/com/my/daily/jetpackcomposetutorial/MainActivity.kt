@@ -46,7 +46,8 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyList() {
-    val items = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+    val items = listOf("Item 1", "Item 2", "Item 3", "Item 4","List and RecyclerView", "Manager count","State and flow","View model",
+        "Simple flow","flow with view model")
     val context = LocalContext.current
 
     Scaffold(
@@ -92,18 +93,41 @@ fun redirectToNextPage(context: Context, index: Int) {
             val intent = Intent(context, Tutorial2::class.java)
             context.startActivity(intent)
         }
+
         RedirectEnum.tutorial3.index -> {
             val intent = Intent(context, Tutorial3::class.java)
             context.startActivity(intent)
         }
+
         RedirectEnum.tutorial4.index -> {
             val intent = Intent(context, Tutorial4::class.java)
             context.startActivity(intent)
         }
+
         RedirectEnum.tutorial5.index -> {
-        val intent = Intent(context, Tutorial5::class.java)
-        context.startActivity(intent)
-    }
+            val intent = Intent(context, Tutorial5::class.java)
+            context.startActivity(intent)
+        }
+        RedirectEnum.tutorial6.index -> {
+            val intent = Intent(context, Tutorial6::class.java)
+            context.startActivity(intent)
+        }
+        RedirectEnum.tutorial7.index -> {
+            val intent = Intent(context, Tutorial7::class.java)
+            context.startActivity(intent)
+        }
+        RedirectEnum.tutorial8.index -> {
+            val intent = Intent(context, Tutorial7::class.java)
+            context.startActivity(intent)
+        }
+        RedirectEnum.tutorial9.index -> {
+            val intent = Intent(context, Tutorial9::class.java)
+            context.startActivity(intent)
+        }
+        RedirectEnum.tutorial10.index -> {
+            val intent = Intent(context, Tutorial10::class.java)
+            context.startActivity(intent)
+        }
     }
 }
 
