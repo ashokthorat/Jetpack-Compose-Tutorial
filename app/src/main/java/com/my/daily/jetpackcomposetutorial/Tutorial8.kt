@@ -3,7 +3,6 @@ package com.my.daily.jetpackcomposetutorial
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,22 +13,19 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.my.daily.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.my.daily.jetpackcomposetutorial.vm.Tutorial8VM
 
-class Tutorial7 : ComponentActivity() {
+class Tutorial8 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
+            val vm = viewModel<Tutorial8VM>()
             JetpackComposeTutorialTheme {
                 Column(
                     modifier = Modifier
@@ -37,10 +33,8 @@ class Tutorial7 : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                  //  var count by remember { mutableIntStateOf(0) } //this is not save data when screen is rotated
-                    var count by rememberSaveable { mutableIntStateOf(0) }//this save data when screen rotated
-
-                    MyStateAndFlowButton(count) { count = it + 1 }
+                    val count = vm.count
+                    MyStateAndFlowButtonUsingVm(count) { vm.increaseCount() }
                 }
             }
         }
@@ -48,7 +42,7 @@ class Tutorial7 : ComponentActivity() {
 }
 
 @Composable
-fun MyStateAndFlowButton(count: Int, updateCount: (Int) -> Unit) {
+fun MyStateAndFlowButtonUsingVm(count: Int, updateCount: (Int) -> Unit) {
 
     Button(
         onClick = {

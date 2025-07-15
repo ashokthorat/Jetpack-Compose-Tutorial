@@ -70,6 +70,24 @@
             android:label="@string/title_activity_tutorial1"
             android:resizeableActivity="true"
             android:theme="@style/Theme.JetpackComposeTutorial" />
+        <activity
+            android:name=".Tutorial8"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial1"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.JetpackComposeTutorial" />
+        <activity
+            android:name=".Tutorial9"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial1"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.JetpackComposeTutorial" />
+        <activity
+            android:name=".Tutorial10"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial1"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.JetpackComposeTutorial" />
     </application>
 
 </manifest>
